@@ -13,12 +13,10 @@ public class ProductController {
 
     private final ProductService productService;
 
-
-
     @RequestMapping("/search-product/{productName}")
     public String getProductList(@PathVariable String productName, Model model){
         model.addAttribute("productList", productService.searchProduct(productName));
 
-        return "product/product-list";
+        return "/product/product-list";
     }
 }

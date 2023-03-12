@@ -16,8 +16,9 @@ public class ProductServiceImpl implements ProductService {
     public static List<Product> PRODUCT_LIST = new ArrayList<>();
     @Override
     public List<Product> searchProduct(String name){
-        // todo implement search structure using string startsWith function
-        return PRODUCT_LIST.stream().filter(product -> product.getName().startsWith(name))
+        //search structure using string startsWith function
+        return PRODUCT_LIST.stream()
+                .filter(product -> product.getName().startsWith(name))
                 .collect(Collectors.toList());
         //return new ArrayList<>();
     }
