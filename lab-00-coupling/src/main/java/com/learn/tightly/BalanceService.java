@@ -1,7 +1,7 @@
 package com.learn.tightly;
 
-import com.cydeo.CustomerBalance;
-import com.cydeo.GiftCardBalance;
+import com.learn.CustomerBalance;
+import com.learn.GiftCardBalance;
 
 import java.math.BigDecimal;
 
