@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class LabController {
 
+
     @RequestMapping("/lab")
   public String labList(Model model){
 
@@ -16,7 +17,7 @@ public class LabController {
         model.addAttribute("fourthLab", "lab-03-SpringMvc");
         model.addAttribute("fifthLab", "lab-04-Thymeleaf");
 
-      return"lab/lablist";
+      return "lab/lab-list";
   }
 
 }
