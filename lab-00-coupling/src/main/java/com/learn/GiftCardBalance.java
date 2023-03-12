@@ -1,5 +1,6 @@
 package com.learn;
 
+import com.learn.loosely.Balance;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,13 +10,10 @@ import java.util.UUID;
 
 @Getter
 @Setter
-public class GiftCardBalance{
-    private UUID userId;
-    private BigDecimal amount;
+public class GiftCardBalance extends Balance {
 
     public GiftCardBalance(UUID userId, BigDecimal amount) {
-        this.userId = userId;
-        this.amount = amount;
+        super (userId, amount);
     }
 
     public BigDecimal addBalance(BigDecimal amount) {
@@ -24,7 +22,7 @@ public class GiftCardBalance{
                         .divide(new BigDecimal(100)
                                 , MathContext.DECIMAL64);
 
-        setAmount(this.amount.add(amount).add(bonusAmount));
-        return this.amount;
+        setAmount(amount.add(amount).add(bonusAmount));
+        return amount;
     }
 }
