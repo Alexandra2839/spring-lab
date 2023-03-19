@@ -19,7 +19,7 @@ public class ProductServiceImpl implements ProductService {
     }
     @Override
     public boolean productCreate(Product product){
-        // todo implement method
+
         product.setId(UUID.randomUUID());
 
         return productRepository.save(product);
@@ -27,7 +27,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> listProduct() {
-        // todo implement method
+
 
 
         return productRepository.findAll();
@@ -35,7 +35,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product findProductById(UUID uuid){
-        // todo implement method
+
         return productRepository.findProductById(uuid);
     }
 
