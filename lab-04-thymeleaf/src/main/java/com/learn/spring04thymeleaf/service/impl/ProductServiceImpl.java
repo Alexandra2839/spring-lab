@@ -20,7 +20,9 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public boolean productCreate(Product product){
         // todo implement method
-        return true;
+        product.setId(UUID.randomUUID());
+
+        return productRepository.save(product);
     }
 
     @Override
