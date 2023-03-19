@@ -33,7 +33,7 @@
                         <td th:text="${cartItem.getProduct().getName()}"></td>
                         <td th:text="${cartItem.getQuantity()}"></td>
                         <td th:text="${cartItem.getTotalAmount()}"></td>
-                        <td><a>Delete From Cart</a></td> <!-- todo implement delete get request-->
+                        <td><a th:href="@{/delete/{productId}(productId = ${cartItem.getProduct().id})}">Delete From Cart</a></td> <!-- todo implement delete get request-->
                     </tr>
                     </tbody>
                 </table>
