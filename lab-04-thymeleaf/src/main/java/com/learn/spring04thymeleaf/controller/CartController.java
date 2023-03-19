@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.UUID;
 
@@ -36,6 +37,14 @@ public class CartController {
 
         cartService.addToCart(productId, quantity);
 
+        return "redirect:/cart";
+    }
+
+
+    @GetMapping("/delete/{productId}")
+        public String deleteFromCart(@PathVariable ("productId") UUID productId){
+
+        cartService.deleteFromCart(productId);
         return "redirect:/cart";
     }
 
