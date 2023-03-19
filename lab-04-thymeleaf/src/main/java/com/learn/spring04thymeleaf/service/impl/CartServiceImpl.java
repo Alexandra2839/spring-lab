@@ -43,6 +43,15 @@ public class CartServiceImpl implements CartService {
     @Override
     public boolean deleteFromCart(UUID productId){
         //todo delete product object from cart using stream
-        return true;
+
+        CartItem itemToDelete = CART.getCartItemList().stream()
+                .filter(p -> p.getProduct().getId().equals(productId))
+                .findAny().orElseThrow();
+
+        CART.setCartTotalAmount(CART.getCartTotalAmount().subtract(itemToDelete.getTotalAmount()));
+
+
+
+        return CART.getCartItemList().remove(itemToDelete);
     }
 }
