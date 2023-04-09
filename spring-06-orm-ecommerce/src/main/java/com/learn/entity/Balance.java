@@ -9,11 +9,9 @@ import java.math.BigInteger;
 @Entity
 @Data
 @NoArgsConstructor
-public class Balance {
+public class Balance extends BaseEntity{
 
-    @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private Long id;
+
 
     private Integer amount;
 

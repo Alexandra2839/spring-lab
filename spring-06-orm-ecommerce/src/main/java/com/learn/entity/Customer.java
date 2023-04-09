@@ -10,11 +10,7 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
-public class Customer {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Customer extends BaseEntity{
 
     private String email;
     private String firstName;

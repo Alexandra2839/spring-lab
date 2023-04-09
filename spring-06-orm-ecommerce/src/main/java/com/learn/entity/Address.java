@@ -9,11 +9,7 @@ import java.math.BigInteger;
 @Entity
 @Data
 @NoArgsConstructor
-public class Address {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Address  extends BaseEntity{
 
     private String name;
     private String street;
