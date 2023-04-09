@@ -14,8 +14,6 @@ import java.math.BigInteger;
 @Entity
 public class Category extends BaseEntity {
 
-
-
     private String name;
 
 
