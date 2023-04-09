@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.learn</groupId>
-    <artifactId>spring-06-orm-ecommerce</artifactId>
+    <artifactId>lab-06-orm-ecommerce</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-06-orm-ecommerce</name>
-    <description>spring-06-orm-ecommerce</description>
+    <name>lab-06-orm-ecommerce</name>
+    <description>lab-06-orm-ecommerce</description>
     <properties>
         <java.version>11</java.version>
     </properties>
