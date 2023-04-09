@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.learn</groupId>
-    <artifactId>lab-15-data-cinema</artifactId>
+    <artifactId>lab-05-data-cinema</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>lab-15-data-cinema</name>
     <description>lab-15-data-cinema</description>
