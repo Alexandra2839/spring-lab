@@ -13,14 +13,12 @@ public class Balance {
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private BigInteger id;
+    private Long id;
 
     private Integer amount;
 
     @OneToOne
     private Customer customer;
 
-    public Balance(Integer amount) {
-        this.amount = amount;
-    }
+
 }

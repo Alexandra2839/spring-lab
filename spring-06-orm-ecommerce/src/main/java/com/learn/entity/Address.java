@@ -13,7 +13,7 @@ public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Long id;
 
     private String name;
     private String street;
@@ -23,9 +23,5 @@ public class Address {
     private Customer customer;
 
 
-    public Address(String name, String street, String zipCode) {
-        this.name = name;
-        this.street = street;
-        this.zipCode = zipCode;
-    }
+
 }

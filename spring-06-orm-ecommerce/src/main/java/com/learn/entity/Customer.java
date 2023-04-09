@@ -14,23 +14,18 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private BigInteger id;
+    private Long id;
 
     private String email;
     private String firstName;
     private String lastName;
     private String userName;
 
-    @OneToOne (mappedBy = "customer")
-    private Balance balance;
+//    @OneToOne (mappedBy = "customer")// no need tto have a way to find balance from customer & keep main customer table clean
+//    private Balance balance;
 
-    @OneToMany (mappedBy = "customer")
-    private List<Address> addressList;
+//    @OneToMany (mappedBy = "customer")
+//    private List<Address> addressList;
 
-    public Customer(String email, String firstName, String lastName, String userName) {
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.userName = userName;
-    }
+
 }
