@@ -32,6 +32,7 @@ public class Movie {
     private LocalDate releaseDate;
 
     private Integer duration;
+    @Column(columnDefinition = "text")
     private String summary;
 
     @ManyToMany
