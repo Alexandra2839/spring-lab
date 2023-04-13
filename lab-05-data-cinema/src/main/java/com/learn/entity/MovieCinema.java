@@ -21,10 +21,10 @@ public class MovieCinema {
     private LocalDateTime dateTime;
 
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Movie movie;
 
-    @ManyToOne
+    @ManyToOne (fetch = FetchType.LAZY)
     private Cinema cinema;
 
     @OneToMany(mappedBy = "movieCinema")
