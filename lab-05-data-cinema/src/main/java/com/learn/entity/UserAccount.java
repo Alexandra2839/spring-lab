@@ -26,7 +26,7 @@ public class UserAccount {
     @OneToMany (mappedBy = "userAccount")
     private List<Ticket> ticketList;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     private AccountDetails accountDetails;
 
     public UserAccount(String email, String password, String username) {
