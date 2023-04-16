@@ -1,13 +1,16 @@
 package com.learn.entity;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 //@Table(name = "cinemas")
 public class Cinema {
@@ -30,5 +33,13 @@ public class Cinema {
     public Cinema(String name, String sponsoredName) {
         this.name = name;
         this.sponsoredName = sponsoredName;
+    }
+
+    @Override
+    public String toString() {
+        return "Cinema{" +
+                "name='" + name + '\'' +
+                ", sponsoredName='" + sponsoredName + '\'' +
+                '}';
     }
 }

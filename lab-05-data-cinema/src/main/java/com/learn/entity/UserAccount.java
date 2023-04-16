@@ -1,14 +1,17 @@
 package com.learn.entity;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 //@Table(name = "userAccounts")
 public class UserAccount {
 
@@ -30,5 +33,14 @@ public class UserAccount {
         this.email = email;
         this.password = password;
         this.username = username;
+    }
+
+    @Override
+    public String toString() {
+        return "UserAccount{" +
+                "email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", username='" + username + '\'' +
+                '}';
     }
 }
