@@ -21,7 +21,7 @@ public class Movie {
     private Long id;
 
     private String name;
-    private Integer price;
+    private BigDecimal price;
 
     @Enumerated(EnumType.STRING)
     private Type type;
@@ -44,7 +44,7 @@ public class Movie {
     @OneToMany (mappedBy = "movie")
     private List<MovieCinema> movieCinemaList;
 
-    public Movie(String name, Integer price, Type type, State state, LocalDate releaseDate, Integer duration, String summary) {
+    public Movie(String name, BigDecimal price, Type type, State state, LocalDate releaseDate, Integer duration, String summary) {
         this.name = name;
         this.price = price;
         this.type = type;
