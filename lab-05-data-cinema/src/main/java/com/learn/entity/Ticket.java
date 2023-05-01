@@ -26,6 +26,8 @@ public class Ticket {
     private String seatNumber;
     private String rowNumber;
 
+    private Integer type;
+
     @ManyToOne(fetch = FetchType.LAZY)
     private MovieCinema movieCinema;
 
