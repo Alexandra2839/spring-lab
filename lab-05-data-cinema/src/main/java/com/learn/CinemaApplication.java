@@ -1,7 +1,7 @@
 package com.learn;
 
-//import org.flywaydb.core.Flyway;
-//import org.flywaydb.core.api.output.MigrateResult;
+import org.flywaydb.core.Flyway;
+import org.flywaydb.core.api.output.MigrateResult;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
