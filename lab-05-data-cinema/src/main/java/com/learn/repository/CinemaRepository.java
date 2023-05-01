@@ -14,7 +14,7 @@ public interface CinemaRepository extends JpaRepository<Cinema, Long> {
     // ------------------- DERIVED QUERIES ------------------- //
 
     //Write a derived query to get cinema with a specific name
-    Optional<Cinema> findAllByName(String name);
+    Optional<Cinema> findByName(String name);
 
 
     //Write a derived query to read sorted the top 3 cinemas that contains a specific sponsored name
@@ -54,7 +54,7 @@ public interface CinemaRepository extends JpaRepository<Cinema, Long> {
 
 
     //Write a native query to distinct all cinemas by sponsored name
-    @Query(value = "select distinct sponsored name from cinema", nativeQuery = true)
-    List<Cinema> distinctBySponsoredName();
+    @Query(value = "SELECT DISTINCT sponsored_name FROM cinema",nativeQuery = true)
+    List<String> distinctBySponsoredName();
 
 }
