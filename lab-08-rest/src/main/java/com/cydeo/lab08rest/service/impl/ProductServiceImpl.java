@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -44,30 +43,48 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void create(ProductDTO productDTO) {
 
+        productRepository.save(mapperUtil.convert(productDTO, new Product()));
+
     }
 
     @Override
-    public List<ProductDTO> getAllByName(String name) {
-        return null;
+    public ProductDTO getProductByName(String name) {
+        return mapperUtil.convert(productRepository.findFirstByName(name), new ProductDTO());
     }
 
     @Override
     public List<ProductDTO> getTop3() {
-        return null;
+        return productRepository.findTop3ByOrderByPriceDesc().stream()
+                .map(product -> mapperUtil.convert(product, new ProductDTO())).collect(Collectors.toList());
     }
 
     @Override
     public List<ProductDTO> getAllByPrice(BigDecimal price) {
-        return null;
+        return productRepository.findAllByPrice(price).stream()
+                .map(product -> mapperUtil.convert(product, new ProductDTO())).collect(Collectors.toList());
+    }
+
+    public Integer countProductByPriceGreaterThan(BigDecimal price){
+        return productRepository.countProductByPriceGreaterThan(price);
+    }
+
+    @Override
+    public List<ProductDTO> getByCategoryAndPrice(List<Long> categoryId, BigDecimal price) {
+        return productRepository.retrieveProductListByCategory(categoryId, price).stream()
+                .map(product -> mapperUtil.convert(product, new ProductDTO())).collect(Collectors.toList());
     }
 
     @Override
     public List<ProductDTO> getAllByPriceAndQuantity(BigDecimal price, Integer quantity) {
-        return null;
+        return productRepository.retrieveProductListGreaterThanPriceAndLowerThanRemainingQuantity(price,quantity)
+                .stream()
+                .map(product -> mapperUtil.convert(product, new ProductDTO()))
+                .collect(Collectors.toList());
     }
 
     @Override
     public List<ProductDTO> getAllByCategoryId(Long id) {
-        return null;
+        return productRepository.retrieveProductListByCategory(id).stream()
+                .map(product -> mapperUtil.convert(product, new ProductDTO())).collect(Collectors.toList());
     }
 }

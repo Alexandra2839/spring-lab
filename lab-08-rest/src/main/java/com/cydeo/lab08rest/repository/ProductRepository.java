@@ -14,12 +14,15 @@ import java.util.Optional;
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
 
+    List<Product> findAllByPrice(BigDecimal price);
 
     //Write a derived query to get top 3 product order by price desc
     List<Product> findTop3ByOrderByPriceDesc();
 
     //Write a derived query to get product by specific name
     Product findFirstByName(String name);
+
+    List<Product> findAllByName(String name);
 
     //Write a derived query to get product by specific category
     List<Product> findAllByCategoryListContaining(Category category);

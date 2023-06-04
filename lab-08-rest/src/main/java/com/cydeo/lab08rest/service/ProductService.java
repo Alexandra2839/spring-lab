@@ -13,7 +13,7 @@ public interface ProductService {
 
     void create (ProductDTO productDTO);
 
-    List<ProductDTO> getAllByName(String name);
+    ProductDTO getProductByName (String name);
 
     List<ProductDTO> getTop3();
     List<ProductDTO> getAllByPrice(BigDecimal price);
@@ -21,6 +21,10 @@ public interface ProductService {
     List<ProductDTO> getAllByPriceAndQuantity(BigDecimal price, Integer quantity);
 
     List<ProductDTO> getAllByCategoryId(Long id);
+
+    Integer countProductByPriceGreaterThan(BigDecimal price);
+
+    List<ProductDTO> getByCategoryAndPrice(List<Long> categoryId, BigDecimal price);
 
 
 
