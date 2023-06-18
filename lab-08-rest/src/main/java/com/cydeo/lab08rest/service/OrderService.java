@@ -4,6 +4,7 @@ import com.cydeo.lab08rest.dto.OrderDTO;
 import com.cydeo.lab08rest.enums.PaymentMethod;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface OrderService {
 
@@ -16,4 +17,6 @@ public interface OrderService {
     List<OrderDTO> getOrderByPaymentMethod(PaymentMethod paymentMethod);
 
     List<OrderDTO> getOrderListByEmail(String email);
+
+    OrderDTO getOrderById(Long id, Optional<String> currency);
 }
